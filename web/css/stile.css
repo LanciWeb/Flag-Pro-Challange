@@ -1,0 +1,213 @@
+/*TAG SELECTORS*/
+body{
+  background-color: #2361AD;
+  /*background-image: url('../img/flags.jpg');*/
+}
+
+h2{
+  color:#fff;
+  font-family: Ardarling;
+  font-size: 7vh;
+  text-align:center;
+}
+
+nav{
+  font-family: Dernier;
+  font-size: 24 px;
+}
+
+nav li{
+  font-size: 18px;
+}
+
+
+/*CLASS SELECTORS*/
+.bigButton{
+  background-color: #FAD813 ;
+  border-radius: 5px ;
+  box-shadow: 0px 0px 10px #D1B411;
+  color: #fff;
+  cursor: pointer;
+  font-family: TypoSlab;
+  font-size: 36px;
+  max-width: 250px;
+  min-width: 100px;
+  margin: 15px auto;
+  padding:5px;
+  text-decoration: none;
+
+}
+
+.bigButton:hover{
+background-color: #D1B411;
+box-shadow: 0px 0px 20px #fff;
+font-family: 36px;
+font-weight:bold;
+text-decoration: none;
+transform: scale(1.1);
+}
+
+.bigButton:active{
+  background-color: #FAD813 ;
+  box-shadow: 0px 0px 10px #D1B411;
+  text-decoration: none;
+  transform: scale(1);
+}
+
+.bigButton a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttons{
+  background-color: #FAD813 ;
+  border-radius: 5px ;
+  box-shadow: 0px 0px 10px #D1B411;
+  color: #fff;
+  cursor: pointer;
+  font-family: TypoSlab;
+  font-size: 4vh;
+  max-width: 260px;
+  max-height:60px;
+  min-width: 100px;
+  margin: 15px auto;
+  padding:5px;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.buttons:hover{
+background-color: #D1B411;
+box-shadow: 0px 0px 20px #fff;
+font-family: 36px;
+font-weight:bold;
+text-decoration: none;
+transform: scale(1.1);
+}
+
+.buttons:active{
+  background-color: #FAD813 ;
+  box-shadow: 0px 0px 10px #D1B411;
+  text-decoration: none;
+  transform: scale(1);
+}
+
+.buttons a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+.buttonContainer{
+  text-align:center;
+}
+
+.hpDiv{
+    text-align:center;
+}
+
+.info{
+  background-color: rgba(164,164,164,0.2);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #DEDEDE;
+  font-family: Dernier;
+  font-size:18px;
+  margin-bottom:20px;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+/*ID SELECTORS */
+
+#info{
+  font-size: 24px;
+}
+
+#main{
+  background-color: rgba(40,44,52,0.6);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #dedede;
+  color: #fff;
+}
+
+
+/*IMPORT SELECTORS*/
+@font-face {
+    font-family: Dernier;
+    src: url(../font/Dernier.ttf);
+}
+@font-face {
+    font-family: Neon;
+    src: url(../font/Neon Glow.ttf);
+}
+@font-face {
+    font-family: Nowadays;
+    src: url(../font/Noewadays Regular.ttf);
+}
+@font-face {
+    font-family: Perfect;
+    src: url(../font/Perfect_fonts_CC.ttf);
+}
+@font-face {
+    font-family: Roundy;
+    src: url(../font/Roundy Font v1.ttf);
+}
+@font-face {
+    font-family: TypoSlab;
+    src: url(../font/TypoSlab_inlineDemo.otf);
+}
+@font-face {
+    font-family: Volt;
+    src: url(../font/volt___.ttf);
+}
+@font-face {
+    font-family: Znikomit;
+    src: url(../font/ZnikomitNo25.otf);
+}
+
+@font-face {
+  font-family:Ardarling;
+  src: url(../font/ardarling.ttf)
+}
+
+/*MEDIA QUERY TABLET */
+@media screen and (max-width: 1125px){
+.modeImg{
+  width:90%;
+}
+}
+@media screen and (max-width: 767px){
+.modeImg{
+  width:60%;
+}
+
+
+}
+
+/*MEDIA QUERY MOBILE*/
+@media screen and (max-width: 600px){
+
+h2{
+  font-size: 7vw;
+}
+
+
+/*Id Selectors*/
+#hpLogo{
+  max-width: 280px;
+  width:95%;
+}
+
+.modeImg{
+  width:80%;
+}
+
+/*Tag Selectors*/
+.bigButton{
+  font-size: 24px;
+  width: 80%;
+}
+
+}

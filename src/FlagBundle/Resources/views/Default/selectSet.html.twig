@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+<div class="row">
+  <h2>SELEZIONA IL SET DI BANDIERE</h2>
+</div>
+<div class="row">
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons" onmouseover="info('mondo');" onmouseout="info('')">
+        <a href="play/{{mode}}/world">Mondo</a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons"  onmouseover="info('africa');" onmouseout="info('')">
+      <a href="play/{{mode}}/africa">Africa</a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons"  onmouseover="info('asia');" onmouseout="info('')">
+      <a href="play/{{mode}}/asia">Asia</a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons"  onmouseover="info('europa');" onmouseout="info('')">
+      <a href="play/{{mode}}/europa">Europa</a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons"  onmouseover="info('nordamerica');" onmouseout="info('')">
+      <a href="play/{{mode}}/nordamerica">NordAmerica</a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons"  onmouseover="info('sudamerica');" onmouseout="info('')">
+      <a href="play/{{mode}}/sudamerica">SudAmerica</a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons" onmouseover="info('oceania');" onmouseout="info('')">
+      <a href="play/{{mode}}/oceania">Oceania</a>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <div class="buttons" onmouseover="info('supersfida');" onmouseout="info('')">
+      <a href="play/{{mode}}/supersfida">SuperSfida</a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="info" id="info">Scegli un set di bandiere con cui giocare!</p>
+  </div>
+</div>
+
+{% endblock %}

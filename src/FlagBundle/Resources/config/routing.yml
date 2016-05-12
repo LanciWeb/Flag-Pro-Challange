@@ -1,0 +1,21 @@
+flag_homepage:
+    path:     /
+    defaults: { _controller: FlagBundle:Default:index }
+
+selectMode:
+    path:     /selectMode
+    defaults: { _controller: FlagBundle:Default:selectMode }
+
+selectSet:
+  path:     /selectSet/{mode}
+  defaults: { _controller: FlagBundle:Default:selectSet }
+
+#rotte di gioco nametoflag
+
+play_ntf:
+  path:     /play/ntf/{set}
+  defaults: { _controller: FlagBundle:Game:flagToName }
+
+play_fnt:
+  path:     /play/ftn/{set}
+  defaults: { _controller: FlagBundle:Game:nameToFLag }
