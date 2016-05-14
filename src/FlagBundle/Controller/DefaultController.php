@@ -39,10 +39,74 @@ class DefaultController extends Controller
 
       $record_ftn=$em->getRepository('FlagBundle:Record')->FindFtNByChosenSet($set);
       $record_ntf=$em->getRepository('FlagBundle:Record')->FindNtFByChosenSet($set);
+
+      $visibility='none'; //do per scontato che non vengo da una partita perciò non devo mostrare il popup
+      $top10=false;
+      //se arrivo dalla fine di una partita...
+      $verifica = 'niente';
+      if($request->get('mode')){
+        $visibility='block';
+        //prendo ciò che mi serve dal form
+        $player=$request->get('playerName');
+        $points=$request->get('points');
+        $mode=$request->get('mode');
+
+
+        //se ho giocato da bandiera a nome...
+        if ($mode=='ftn'){
+          //controllo se ci sono almeno 10 partite
+            if (count($record_ftn)>=10)// se ci sono già 10 giocatori in lista devo controllare che il punteggio rientri nella top 10
+            {
+              $decimoPosto=$em->getRepository('FlagBundle:Record')->FindLastFtNPosition($set);
+              $top10= $points>$decimoPosto ?  true : false;
+            }
+            else $top10=true; // se non ci sono ancora 10 giocatori si entra di diritto in top 10
+            if($top10===true){ // se entrato in top 10 registro
+              $punteggio=new Record(); //aggiungo il nuovo record
+              $punteggio->setName($player);
+              $punteggio->setPoints($points);
+              $punteggio->setMode($mode);
+              $punteggio->setFlagset($set);
+              $em->persist($punteggio);
+              $em->flush();
+              //e aggiorno la classifica
+              $record_ftn=$em->getRepository('FlagBundle:Record')->FindFtNByChosenSet($set);
+            }
+        }
+        //se ho giocato da nome a bandiera...
+        else{
+
+          //controllo se ci sono almeno 10 partite
+            if (count($record_ntf)>=10)// se ci sono già 10 giocatori in lista devo controllare che il punteggio rientri nella top 10
+            {
+              $decimoPosto=$em->getRepository('FlagBundle:Record')->FindLastNtFPosition($set);
+              $top10= $points>$decimoPosto ?  true : false;
+            }
+            else $top10=true; // se non ci sono ancora 10 giocatori si entra di diritto in top 10
+            if($top10===true){ // se entrato in top 10 registro
+              $punteggio=new Record(); //inserieco il nuovo record
+              $punteggio->setName($player);
+              $punteggio->setPoints($points);
+              $punteggio->setMode($mode);
+              $punteggio->setFlagset($set);
+              $em->persist($punteggio);
+              $em->flush();
+              //e aggiorno la classifica
+              $record_ntf=$em->getRepository('FlagBundle:Record')->FindNtFByChosenSet($set);
+            }
+        }
+      }
+      $congrats= $top10 ? "Congratulazioni!" : "Spiacenti...";
+      $messaggio= $top10 ?  "Sei entrato nella top 10 del livello $set!" :
+        "questa volta non hai raggiunto la top 10...";
+
       return $this->render ('FlagBundle:Default:recordspage.html.twig',[
         'record_ftn'=>$record_ftn,
         'record_ntf'=>$record_ntf,
-        'modalita'=>strtoupper($set)
+        'modalita'=>strtoupper($set),
+        'visibility'=>$visibility, //mi serve per decidere se mostrare il modale o meno
+        'congrats'=>$congrats,
+        'messaggio'=>$messaggio
       ]);
     }
 

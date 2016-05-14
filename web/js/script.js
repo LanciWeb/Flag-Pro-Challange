@@ -43,6 +43,16 @@ function info(selezione) {
   document.getElementById('info').innerHTML=text;
 }
 
+//funzione per la fine della partita
+$(document).ready(
+	function(){
+    $("#endGame").click(function(e){
+      e.preventDefault();
+      $("#layer").fadeIn("slow");
+      $("#endGameModal").fadeIn("fast");
+  });
+});
+
 //funzione per la comparsa dei modali di suggerimento ntf
 $(document).ready(
 	function(){
@@ -60,7 +70,18 @@ $(document).ready(
     $(".modalClose").click(function(){
       $("#layer").fadeOut("slow");
       $("#helpModal").fadeOut("fast");
-      $("#recordModal").fadeOut("fast");
+      $("recordModal").fadeOut("fast");
+      $("#recordLayer").fadeOut("fast");
+      $("#endGameModal").fadeOut("fast");
     });
+});
 
+//per ridimensionare il testo all'occorrenza
+$(document).ready(
+  function(){
+    $(".choices").load(function(){
+      if ($(this).val().length>18){
+        $(this).css("font-size","16px")
+      }
+    });
 });

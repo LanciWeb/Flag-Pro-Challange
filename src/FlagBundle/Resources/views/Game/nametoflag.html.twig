@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block back %}
 <li id="help"><a href="">How to Play</a></li>
-<li class="endGame"><a href="{{url('flag_homepage')}}">Fine Partita</a></li>
+<li class="endGame"><a href="" id="endGame">Fine Partita</a></li>
 {% endblock %}
 {% block body %}
 
@@ -55,5 +55,15 @@
       <br /><br />Per ogni risposta corretta ti verra' assegnato un punto, mentre per ogni risposta sbagliata un punto verra sottratto al totale.
       Riuscirai ad entrare nella TOP 10?  Raccogli la sfida!</p>
     <h6 class="modalClose">OK!</h6>
+  </div>
+  <div id="endGameModal" class="modal">
+        <h4>Vuoi terminare la partita con {{points}} punti?</h4>
+        <form action="/records/set/{{setScelto}}" method="post" >
+        <input type="text" name="playerName" placeholder="Inserisci nome" class="player" required />
+        <input type="hidden" name="mode" value="ntf" />
+        <input type="hidden" name="points" value="{{points}}" />
+        <input type="submit" class="choices" value="SI" />
+        </form>
+        <input type="submit" class="choices modalClose" value="NO" />
   </div>
 {% endblock %}

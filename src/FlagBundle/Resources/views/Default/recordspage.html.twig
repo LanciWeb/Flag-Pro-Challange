@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block back %}<li><a href="" onclick="goBack()">Indietro</a></li>{% endblock %}
+{% block back %}<li><a href="" onclick="{{url('flag_homepage')}}">Home</a></li>{% endblock %}
 {% block body%}
 <div class="row">
   <div class="col-xs-12">
@@ -22,6 +22,15 @@
       <li>{{player.name}} {{player.points}}</li>
     {% endfor %}
     </ol>
+  </div>
+</div>
+{% endblock %}
+{% block congrats %}
+<div id="recordLayer" style="display:{{visibility}}">
+  <div id="recordModal" class="modal">
+    <h1>{{congrats}}</h1>
+    <h4>{{messaggio}}</h4>
+    <h6 class="modalClose">OK!</h6>
   </div>
 </div>
 {% endblock %}

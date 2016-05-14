@@ -20,6 +20,14 @@ body{
   /*background-image: url('../img/flags.jpg');*/
 }
 
+h1{
+  color:yellow;
+  font-family: Ardarling;
+  font-size: 10vh;
+  margin-bottom: 30px;
+  text-align:center;
+}
+
 h2{
   color:#fff;
   font-family: Ardarling;
@@ -49,6 +57,7 @@ h6{
   color:yellow;
   font-family: Ardarling;
   font-size: 5vh;
+  margin-top:30px;
   text-align:center;
 }
 
@@ -179,7 +188,7 @@ transform: scale(1.1);
   color: #fff;
   cursor: pointer;
   font-family: TypoSlab;
-  font-size: 4vh;
+  font-size: 2vw;
   width: 260px;
   margin: 15px auto;
   padding:5px;
@@ -263,10 +272,23 @@ transform: scale(1.1);
   cursor: pointer;
 }
 
+.player{
+  background-color:#505662;
+  border-radius:10px;
+  box-shadow: 0px 0px 15px 5px; #dedede;
+  color: #fff;
+  display:block;
+  font-family: Ardarling;
+  font-size: 36px;
+  margin: 20px auto;
+  text-align:center;
+  text-transform: uppercase;
+  width:70%;
+}
+
 .recordContainer{
   background-color: #fff;
   border-radius: 5px;
-  box-sha
   text-align:center;
 }
 
@@ -290,6 +312,23 @@ transform: scale(1.1);
 }
 
 /*ID SELECTORS */
+
+#endGameModal{
+  background-color: rgb(40,44,52);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #DEDEDE;
+  color: #fff;
+  font-family: Dernier;
+  font-size: 4vh;
+  margin: 10% auto;
+  padding: 10px;
+  text-align: center;
+  width:80%;
+}
+
+#endGameModal .choices{
+  display: inline;
+}
 
 #helpModal{
   display: none;
@@ -315,6 +354,20 @@ transform: scale(1.1);
   box-shadow: 0px 0px 10px #dedede;
   color: #fff;
 }
+
+#recordLayer{
+  background-color:rgba(166,166,166,0.6);
+	height:100%;
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index: 12;
+}
+
+#recordModal{
+  display: block;
+}
+
 
 
 /*IMPORT SELECTORS*/
@@ -373,6 +426,12 @@ transform: scale(1.1);
 /*MEDIA QUERY MOBILE*/
 @media screen and (max-width: 600px){
 
+h1{
+  font-size: 7vw;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 h2{
   font-size: 7vw;
   padding-left: 10%;
@@ -430,6 +489,14 @@ h6{
   width:80%;
 }
 
+.player{
+
+  font-size: 4vw;
+  padding-bottom:10px;
+  padding-top:10px;
+  width:70%;
+}
+
 .smallFlags{
   border:2px solid #fff;
   border-radius:3px;
@@ -438,5 +505,7 @@ h6{
   margin: 20px auto;
   width: 120px;
 }
+
+
 
 }

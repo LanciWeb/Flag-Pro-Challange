@@ -20,4 +20,16 @@ class RecordRepository extends \Doctrine\ORM\EntityRepository
     return $this->getEntityManager()->createQuery("SELECT r FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ntf' ORDER BY r.points DESC")
     ->setMaxResults(10)->getResult();
 }
+
+public function FindLastFtNPosition($set){
+  return $this->getEntityManager()->createQuery("SELECT MIN(r.points) FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ftn'")
+  ->setMaxResults(1)->getOneOrNullResult();
+}
+
+public function FindLastNtFPosition($set){
+  return $this->getEntityManager()->createQuery("SELECT MIN(r.points) FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ntf'")
+  ->setMaxResults(1)->getOneOrNullResult();
+}
+
+
 }
