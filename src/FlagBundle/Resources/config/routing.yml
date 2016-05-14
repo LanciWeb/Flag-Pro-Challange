@@ -13,9 +13,17 @@ selectSet:
 #rotte di gioco nametoflag
 
 play_ntf:
-  path:     /play/ntf/{set}
-  defaults: { _controller: FlagBundle:Game:flagToName }
+  path:     selectSet/play/ntf/{set}
+  defaults: { _controller: FlagBundle:Game:nameToFlag }
 
 play_fnt:
-  path:     /play/ftn/{set}
-  defaults: { _controller: FlagBundle:Game:nameToFLag }
+  path:     selectSet/play/ftn/{set}
+  defaults: { _controller: FlagBundle:Game:flagToName }
+
+records:
+  path:     records
+  defaults: { _controller: FlagBundle:Default:recordChoice }
+
+recordsPage:
+  path:     records/set/{set}
+  defaults: { _controller: FlagBundle:Default:recordsPage }

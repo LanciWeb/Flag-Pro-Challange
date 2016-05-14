@@ -22,9 +22,8 @@
 
         <div class="collapse navbar-collapse" id="nav-toggle">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#" id="aboutUs">About Us</a></li>
-            <li><a href="/add">Help</a></li>
-            <li><a href="" onclick="goBack()">Back</a></li>
+            <li class="active"><a href="{{url('records')}}">Record</a></li>
+            {% block back %}{% endblock %}
           </ul>
         </div>
       </nav>

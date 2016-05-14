@@ -1,51 +1,51 @@
 {% extends 'base.html.twig' %}
-
+{% block back %}<li><a href="{{url('selectMode')}}">Cambia Modalita'</a></li>{% endblock %}
 {% block body%}
 <div class="row">
   <h2>SELEZIONA IL SET DI BANDIERE</h2>
 </div>
 <div class="row">
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons" onmouseover="info('mondo');" onmouseout="info('')">
-        <a href="play/{{mode}}/world">Mondo</a>
-    </div>
+    <a href="play/{{mode}}/mondo">
+      <div class="buttons" onmouseover="info('mondo');" onmouseout="info('')">Mondo</div>
+    </a>
   </div>
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons"  onmouseover="info('africa');" onmouseout="info('')">
-      <a href="play/{{mode}}/africa">Africa</a>
-    </div>
+    <a href="play/{{mode}}/africa">
+      <div class="buttons"  onmouseover="info('africa');" onmouseout="info('')">Africa</div>
+    </a>
   </div>
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons"  onmouseover="info('asia');" onmouseout="info('')">
-      <a href="play/{{mode}}/asia">Asia</a>
-    </div>
+    <a href="play/{{mode}}/asia">
+      <div class="buttons"  onmouseover="info('asia');" onmouseout="info('')">Asia</div>
+    </a>
   </div>
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons"  onmouseover="info('europa');" onmouseout="info('')">
-      <a href="play/{{mode}}/europa">Europa</a>
-    </div>
+    <a href="play/{{mode}}/europa">
+      <div class="buttons"  onmouseover="info('europa');" onmouseout="info('')">Europa</div>
+    </a>
   </div>
 </div>
 <div class="row">
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons"  onmouseover="info('nordamerica');" onmouseout="info('')">
-      <a href="play/{{mode}}/nordamerica">NordAmerica</a>
-    </div>
+    <a href="play/{{mode}}/nordamerica">
+      <div class="buttons"  onmouseover="info('nordamerica');" onmouseout="info('')">NordAmerica</div>
+    </a>
   </div>
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons"  onmouseover="info('sudamerica');" onmouseout="info('')">
-      <a href="play/{{mode}}/sudamerica">SudAmerica</a>
-    </div>
+    <a href="play/{{mode}}/sudamerica">
+      <div class="buttons"  onmouseover="info('sudamerica');" onmouseout="info('')">SudAmerica</div>
+    </a>
   </div>
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons" onmouseover="info('oceania');" onmouseout="info('')">
-      <a href="play/{{mode}}/oceania">Oceania</a>
-    </div>
+    <a href="play/{{mode}}/oceania">
+      <div class="buttons" onmouseover="info('oceania');" onmouseout="info('')">Oceania</div>
+    </a>
   </div>
   <div class="col-md-3 col-sm-6" class="buttonContainer">
-    <div class="buttons" onmouseover="info('supersfida');" onmouseout="info('')">
-      <a href="play/{{mode}}/supersfida">SuperSfida</a>
-    </div>
+    <a href="play/{{mode}}/supersfida">
+      <div class="buttons" onmouseover="info('supersfida');" onmouseout="info('')">SuperSfida</div>
+    </a>
   </div>
 </div>
 <div class="row">

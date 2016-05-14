@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block back %}<li><a href="{{url('flag_homepage')}}">Indietro</a></li>{% endblock %}
+{% block body%}
+<div class="row">
+  <h2>SELEZIONA IL SET DI BANDIERE</h2>
+</div>
+<div class="row">
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/mondo">
+      <div class="buttons">Mondo</div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/africa">
+      <div class="buttons">Africa</div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/asia">
+      <div class="buttons">Asia</div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/europa">
+      <div class="buttons">Europa</div>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/nordamerica">
+      <div class="buttons">NordAmerica</div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/sudamerica">
+      <div class="buttons">SudAmerica</div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/oceania">
+      <div class="buttons">Oceania</div>
+    </a>
+  </div>
+  <div class="col-md-3 col-sm-6" class="buttonContainer">
+    <a href="records/set/supersfida">
+      <div class="buttons">SuperSfida</div>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="info">SCEGLI QUALI RECORD VUOI VISUALIZZARE</p>
+  </div>
+</div>
+
+{% endblock %}

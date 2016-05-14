@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
-
+{% block back %}<li><a href="{{url('flag_homepage')}}">Indietro</a></li>{% endblock %}
 {% block body%}
 <div class="row">
   <div class="cols-xs-12">
-    <h2>SELEZIONA IL SET DI BANDIERE</h2>
+    <h2>SELEZIONA IL LA MODALITA' DI GIOCO</h2>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-6 hpDiv">
     <a href="selectSet/NtF"><img src="{{asset('img/nametoflag.png')}}" class="modeImg"/></a>
-    <div class="bigButton"><a href="selectSet/ntf">GIOCA</a></div>
+    <a href="selectSet/ntf"><div class="bigButton">GIOCA</div></a>
     <p class="info">In questa modalita' dovrai indovinare quale tra quattro bandiere e' quella che corrisponde allo stato proposto!</p>
   </div>
   <div class="col-sm-6 hpDiv">
     <a href="selectSet/FtN"><img src="{{asset('img/flagtoname.png')}}" class="modeImg" /></a>
-    <div class="bigButton"><a href="selectSet/ftn">GIOCA</a></div>
+    <a href="selectSet/ftn"><div class="bigButton">GIOCA</div></a>
     <p class="info">In questa modalita' dovrai indovinare a quale stato corrisponde la bandiera proposta!</p>
   </div>
 </div>

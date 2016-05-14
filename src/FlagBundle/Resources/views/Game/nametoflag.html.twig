@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block back %}<li class="endGame"><a href="{{url('flag_homepage')}}">Fine Partita</a></li>{% endblock %}
+{% block body %}
+
+<div class="row">
+  <h4>Qual &egrave; la bandiera corretta?</h4>
+</div>
+<div class="row">
+  <div class="col-xs-12 buttonContainer">
+    <h3>{{country.name}}</h3>
+  </div>
+  <div class="col-xs-6 buttonContainer">
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{country.name}}" />
+      <input type="hidden" name="guess" value="{{flags[0].name}}" />
+      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[0].name}}.png" alt="{{flags[0].name}}" title="???" />
+    </form>
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{country.name}}" />
+      <input type="hidden" name="guess" value="{{flags[1].name}}" />
+      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[1].name}}.png" alt="{{flags[1].name}}" title="???" />
+    </form>
+    </div>
+    <div class="col-xs-6 buttonContainer">
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{country.name}}" />
+      <input type="hidden" name="guess" value="{{flags[2].name}}" />
+      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[2].name}}.png" alt="{{flags[2].name}}" title="???" />
+    </form>
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{country.name}}" />
+      <input type="hidden" name="guess" value="{{flags[3].name}}" />
+      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[3].name}}.png" alt="{{flags[3].name}}" title="???" />
+    </form>
+  </div>
+</div>
+{% endblock %}

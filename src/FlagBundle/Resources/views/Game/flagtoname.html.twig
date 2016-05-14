@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block back %}<li class="endGame"><a href="{{url('flag_homepage')}}">Fine Partita</a></li>{% endblock %}
+{% block body %}
+
+<div class="row">
+  <h4>A quale stato appartiene questa bandiera?</h4>
+</div>
+<div class="row">
+  <div class="col-xs-12 buttonContainer">
+    <img src="http://www.marcolanci.it/flagProChallange/flags/{{flag.name}}.png" alt="{{flag.name}}" title="???" class="mainFlag" />
+  </div>
+  <div class="col-sm-6 buttonContainer">
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{flag.name}}" />
+      <input type="hidden" name="guess" value="{{countries[0].name}}" />
+      <input type="submit" class="choices" value="{{countries[0].name}}" />
+    </form>
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{flag.name}}" />
+      <input type="hidden" name="guess" value="{{countries[1].name}}" />
+      <input type="submit" class="choices" value="{{countries[1].name}}" />
+    </form>
+    </div>
+    <div class="col-sm-6 buttonContainer">
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{flag.name}}" />
+      <input type="hidden" name="guess" value="{{countries[2].name}}" />
+      <input type="submit" class="choices" value="{{countries[2].name}}" />
+    </form>
+    <form name="game" method="post" action=""/>
+      <input type="hidden" name="answer" value="{{flag.name}}" />
+      <input type="hidden" name="guess" value="{{countries[3].name}}" />
+      <input type="submit" class="choices" value="{{countries[3].name}}" />
+    </form>
+  </div>
+</div>
+{% endblock %}

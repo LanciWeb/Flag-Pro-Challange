@@ -1,4 +1,20 @@
 /*TAG SELECTORS*/
+a{
+  text-decoration:none;
+}
+
+a:active{
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration:none;
+}
+
 body{
   background-color: #2361AD;
   /*background-image: url('../img/flags.jpg');*/
@@ -11,6 +27,31 @@ h2{
   text-align:center;
 }
 
+h3{
+  background-color: rgba(164,164,164,0.2);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #DEDEDE;
+  font-family: Dernier;
+  font-size: 4vw;
+  margin:20px 10%;
+  padding: 10px;
+  text-align: center;
+}
+
+h4{
+  color:#fff;
+  font-family: Ardarling;
+  font-size: 7vh;
+  text-align:center;
+}
+
+h6{
+  color:yellow;
+  font-family: Ardarling;
+  font-size: 5vh;
+  text-align:center;
+}
+
 nav{
   font-family: Dernier;
   font-size: 24 px;
@@ -20,6 +61,11 @@ nav li{
   font-size: 18px;
 }
 
+ol{
+  font-family: Ardarling;
+  font-size:5vh;
+  text-align: center;
+}
 
 /*CLASS SELECTORS*/
 .bigButton{
@@ -58,6 +104,15 @@ transform: scale(1.1);
   color: #fff;
   text-decoration: none;
 }
+.bigButton a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+.bigButton:visited{
+  color: #fff;
+  text-decoration: none;
+}
 
 .buttons{
   background-color: #FAD813 ;
@@ -93,15 +148,72 @@ transform: scale(1.1);
   transform: scale(1);
 }
 
+.buttons a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttons:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
 .buttons a{
   color: #fff;
   text-decoration: none;
 }
 
-
-
 .buttonContainer{
   text-align:center;
+}
+
+.choices{
+  background-color: #FAD813 ;
+  border-radius: 5px ;
+  box-shadow: 0px 0px 10px #D1B411;
+  color: #fff;
+  cursor: pointer;
+  font-family: TypoSlab;
+  font-size: 4vh;
+  width: 260px;
+  margin: 15px auto;
+  padding:5px;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.choices:hover{
+background-color: #D1B411;
+box-shadow: 0px 0px 20px #fff;
+font-family: 36px;
+font-weight:bold;
+text-decoration: none;
+transform: scale(1.1);
+}
+
+.choices:active{
+  background-color: #FAD813 ;
+  box-shadow: 0px 0px 15px 10px #D1B411;
+  text-decoration: none;
+  transform: scale(1);
+}
+
+.endGame{
+  background-color: #FA5858
+}
+
+.endGame:hover{
+  background-color: #CE1126;
+  text-shadow: 0 0 100px #fff !important;
+}
+
+.endGame a{
+  color: #666 !important;
+}
+.endGame a:hover{
+  color: #fff !important;
+  text-shadow: 0 0 100px #fff !important;
 }
 
 .hpDiv{
@@ -119,6 +231,45 @@ transform: scale(1.1);
   padding: 10px;
   text-align: center;
 }
+
+.mainFlag{
+  border:3px solid #fff;
+  border-radius:5px;
+  box-shadow: 0px 0px 15px 5px; #dedede;
+  height: 170px;
+  margin: 20px auto;
+  width:260px;
+}
+
+.recordContainer{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px;
+  text-align:center;
+}
+
+.smallFlags{
+  border:2px solid #fff;
+  border-radius:3px;
+  box-shadow: 0px 0px 10px 0px;
+  height: 100px;
+  margin: 20px auto;
+  width: 170px;
+}
+
+.smallFlags:hover{
+  box-shadow: 0px 0px 10px 5px #FFCE00;
+  transform: scale(1.1);
+  transform: rotate(15deg);
+}
+
+.smallFlags:active{
+  box-shadow: 0px 0px 20px 10px #FFCE00;
+  transform: scale(1);
+}
+
+
+
 /*ID SELECTORS */
 
 #info{
@@ -191,23 +342,62 @@ transform: scale(1.1);
 
 h2{
   font-size: 7vw;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
+h3{
+  font-size: 7vw;
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
+h4{
+  font-size: 7vw;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+h6{
+  font-size: 4vh;
+  padding-left: 10%;
+  padding-right: 10%;
+}
 /*Id Selectors*/
 #hpLogo{
   max-width: 280px;
   width:95%;
 }
 
+/*Class Selectors*/
+.bigButton{
+  font-size: 24px;
+  width: 80%;
+}
+
+.choices{
+  font-size:6vw;
+  margin: 10px auto;
+  width:230px;
+}
+
+.mainFlag{
+  height: 120px;
+  margin: 10px auto;
+  width:200px;
+}
+
 .modeImg{
   width:80%;
 }
 
-/*Tag Selectors*/
-.bigButton{
-  font-size: 24px;
-  width: 80%;
+.smallFlags{
+  border:2px solid #fff;
+  border-radius:3px;
+  box-shadow: 0px 0px 10px 0px;
+  height: 70px;
+  margin: 20px auto;
+  width: 120px;
 }
 
 }

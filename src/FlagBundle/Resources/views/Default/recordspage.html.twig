@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block back %}<li><a href="" onclick="goBack()">Indietro</a></li>{% endblock %}
+{% block body%}
+<div class="row">
+  <div class="col-xs-12">
+    <h2>HALL OF FAME  '{{modalita}}'</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6" class="recordContainer">
+    <h6>TOP 10 <wbr /> Flag to Name</h6>
+    <ol>
+    {% for player in record_ftn %}
+      <li>{{player.name}} {{player.points}}</li>
+    {% endfor %}
+    </ol>
+  </div>
+  <div class="col-sm-6" class="recordContainer">
+    <h6>TOP 10 <wbr /> Name to Flag</h6>
+    <ol>
+    {% for player in record_ntf %}
+      <li>{{player.name}} {{player.points}}</li>
+    {% endfor %}
+    </ol>
+  </div>
+</div>
+{% endblock %}
