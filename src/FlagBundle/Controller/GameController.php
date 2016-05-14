@@ -35,9 +35,19 @@ class GameController extends Controller
       $mescolate=shuffle($sorteggiate);
       $flag=$countrySet[$c1];
 
+      //controllo se sta giocando
+      if($request->get('answer')){
+        $rispostaCorretta=$request->get('answer');
+        $rispostaUtente=$request->get('guess');
+        $punti=$request->get('points')*1;
+        $rispostaUtente === $rispostaCorretta ? $punti++ : $punti--;
+      } else $punti=0;
+
+
       return $this->render ('FlagBundle:Game:flagtoname.html.twig', [
           'countries'=>$sorteggiate,
           'flag'=>$flag,
+          'points'=>$punti
       ]);
     }
 
@@ -68,9 +78,18 @@ class GameController extends Controller
       $mescolate=shuffle($sorteggiate);
       $flag=$countrySet[$c1];
 
+      //controllo se sta giocando
+      if($request->get('answer')){
+        $rispostaCorretta=$request->get('answer');
+        $rispostaUtente=$request->get('guess');
+        $punti=$request->get('points')*1;
+        $rispostaUtente === $rispostaCorretta ? $punti++ : $punti--;
+      } else $punti=0;
+
       return $this->render ('FlagBundle:Game:nametoflag.html.twig', [
           'flags'=>$sorteggiate,
-          'country'=>$flag
+          'country'=>$flag,
+          'points'=>$punti
       ]);
     }
 

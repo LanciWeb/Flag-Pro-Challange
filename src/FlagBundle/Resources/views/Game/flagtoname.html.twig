@@ -8,14 +8,22 @@
 <div class="row">
   <div class="col-xs-12 buttonContainer">
     <img src="http://www.marcolanci.it/flagProChallange/flags/{{flag.name}}.png" alt="{{flag.name}}" title="???" class="mainFlag" />
+      <br /><span style="color:
+              {% if points>0 %}  lightgreen;"
+              {% elseif points<0 %} #f00;"
+              {% else %} #fff;"
+              {% endif %}>Punteggio: {{points}}
+            </span>
   </div>
   <div class="col-sm-6 buttonContainer">
     <form name="game" method="post" action=""/>
+      <input type="hidden" name="points" value="{{points}}" />
       <input type="hidden" name="answer" value="{{flag.name}}" />
       <input type="hidden" name="guess" value="{{countries[0].name}}" />
       <input type="submit" class="choices" value="{{countries[0].name}}" />
     </form>
     <form name="game" method="post" action=""/>
+      <input type="hidden" name="points" value="{{points}}" />
       <input type="hidden" name="answer" value="{{flag.name}}" />
       <input type="hidden" name="guess" value="{{countries[1].name}}" />
       <input type="submit" class="choices" value="{{countries[1].name}}" />
@@ -23,11 +31,13 @@
     </div>
     <div class="col-sm-6 buttonContainer">
     <form name="game" method="post" action=""/>
+      <input type="hidden" name="points" value="{{points}}" />
       <input type="hidden" name="answer" value="{{flag.name}}" />
       <input type="hidden" name="guess" value="{{countries[2].name}}" />
       <input type="submit" class="choices" value="{{countries[2].name}}" />
     </form>
     <form name="game" method="post" action=""/>
+      <input type="hidden" name="points" value="{{points}}" />
       <input type="hidden" name="answer" value="{{flag.name}}" />
       <input type="hidden" name="guess" value="{{countries[3].name}}" />
       <input type="submit" class="choices" value="{{countries[3].name}}" />

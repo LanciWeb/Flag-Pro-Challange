@@ -67,6 +67,11 @@ ol{
   text-align: center;
 }
 
+span{
+  font-family: Dernier;
+  font-size: 3vh;
+}
+
 /*CLASS SELECTORS*/
 .bigButton{
   background-color: #FAD813 ;
@@ -244,7 +249,7 @@ transform: scale(1.1);
 .recordContainer{
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px;
+  box-sha
   text-align:center;
 }
 
@@ -363,6 +368,7 @@ h6{
   padding-left: 10%;
   padding-right: 10%;
 }
+
 /*Id Selectors*/
 #hpLogo{
   max-width: 280px;
