@@ -246,6 +246,23 @@ transform: scale(1.1);
   width:260px;
 }
 
+.modal{
+  background-color: rgb(40,44,52);
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #DEDEDE;
+  color: #fff;
+  font-family: Dernier;
+  font-size: 4vh;
+  margin: 10% auto;
+  padding: 10px;
+  text-align: center;
+  width:80%;
+}
+
+.modalClose{
+  cursor: pointer;
+}
+
 .recordContainer{
   background-color: #fff;
   border-radius: 5px;
@@ -264,21 +281,32 @@ transform: scale(1.1);
 
 .smallFlags:hover{
   box-shadow: 0px 0px 10px 5px #FFCE00;
-  transform: scale(1.1);
-  transform: rotate(15deg);
+  transform: scale(1.1) rotate(15deg) ;
 }
 
 .smallFlags:active{
   box-shadow: 0px 0px 20px 10px #FFCE00;
-  transform: scale(1);
+  transform: scale(1) rotate(15deg);
 }
-
-
 
 /*ID SELECTORS */
 
+#helpModal{
+  display: none;
+}
+
 #info{
   font-size: 24px;
+}
+
+#layer{
+  background-color:rgba(166,166,166,0.6);
+  display:none;
+	height:100%;
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index: 12;
 }
 
 #main{
@@ -391,6 +419,11 @@ h6{
   height: 120px;
   margin: 10px auto;
   width:200px;
+}
+
+.modal{
+    font-size: 3vh;
+    margin: 10% auto 40%;
 }
 
 .modeImg{

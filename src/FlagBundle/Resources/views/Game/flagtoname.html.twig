@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block back %}<li class="endGame"><a href="{{url('flag_homepage')}}">Fine Partita</a></li>{% endblock %}
+{% block back %}
+<li id="help"><a href="">How to Play</a></li>
+<li class="endGame"><a href="{{url('flag_homepage')}}">Fine Partita</a></li>
+{% endblock %}
 {% block body %}
 
 <div class="row">
@@ -44,4 +47,13 @@
     </form>
   </div>
 </div>
+{% endblock %}
+{% block modal %}
+  <div id="helpModal" class="modal">
+    <p>In questa modalita' ti verra' mostrata una bandiera e dovrai indovinare a quale stato appartiene tra i 4 proposti.
+      <br /><br />Non preoccuparti: non ci sono limiti di tempo!
+      <br /><br />Per ogni risposta corretta ti verra' assegnato un punto, mentre per ogni risposta sbagliata un punto verra sottratto al totale.
+      Riuscirai ad entrare nella TOP 10?  Raccogli la sfida!</p>
+    <h6 class="modalClose">OK!</h6>
+  </div>
 {% endblock %}

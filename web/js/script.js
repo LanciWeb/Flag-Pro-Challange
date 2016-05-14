@@ -1,8 +1,10 @@
+// funzione per tortnare indietro
 function goBack() {
   this.preventDefault;
   window.history.back()
 }
 
+//suggerimenti per le modalità di gioco
 function info(selezione) {
   var text;
   switch(selezione){
@@ -40,3 +42,25 @@ function info(selezione) {
   }
   document.getElementById('info').innerHTML=text;
 }
+
+//funzione per la comparsa dei modali di suggerimento ntf
+$(document).ready(
+	function(){
+    $("#help").click(function(e){
+      e.preventDefault();
+      $("#layer").fadeIn("slow");
+      $("#helpModal").fadeIn("fast");
+    });
+});
+
+//funzione chiusura modali
+
+$(document).ready(
+	function(){
+    $(".modalClose").click(function(){
+      $("#layer").fadeOut("slow");
+      $("#helpModal").fadeOut("fast");
+      $("#recordModal").fadeOut("fast");
+    });
+
+});
