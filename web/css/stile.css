@@ -74,6 +74,7 @@ ol{
   font-family: Ardarling;
   font-size:5vh;
   text-align: center;
+  text-transform: lowercase;
 }
 
 span{
@@ -189,7 +190,7 @@ transform: scale(1.1);
   cursor: pointer;
   font-family: TypoSlab;
   font-size: 2vw;
-  width: 260px;
+  width: 135%;
   margin: 15px auto;
   padding:5px;
   text-align: center;
