@@ -23,13 +23,13 @@
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[0].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
-      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[0].flagsrc}}.png" alt="???" title="???" />
+      <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[0].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
     <form name="game" method="post" action=""/>
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[1].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
-      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[1].flagsrc}}.png" alt="???" title="???" />
+      <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[1].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
     </div>
     <div class="col-xs-6 buttonContainer">
@@ -37,13 +37,13 @@
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[2].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
-      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[2].flagsrc}}.png" alt="???" title="???" />
+      <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[2].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
     <form name="game" method="post" action=""/>
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[3].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
-      <input type="image" class="smallFlags" src="http://www.marcolanci.it/flagProChallange/flags/{{flags[3].flagsrc}}.png" alt="???" title="???" />
+      <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[3].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
   </div>
 </div>

@@ -10,7 +10,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12 buttonContainer">
-    <img src="http://www.marcolanci.it/flagProChallange/flags/{{flag.flagsrc}}.png" alt="???" title="???" class="mainFlag" />
+    <img src="{{asset('img/flags/'~flag.flagsrc~'.png')}}" alt="???" title="???" class="mainFlag" />
       <br /><span style="color:
               {% if points>0 %}  lightgreen;"
               {% elseif points<0 %} #f00;"
