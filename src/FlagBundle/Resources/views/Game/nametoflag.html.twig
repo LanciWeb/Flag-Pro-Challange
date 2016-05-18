@@ -16,19 +16,26 @@
             {% elseif points<0 %} #f00;"
             {% else %} #fff;"
             {% endif %}>Punteggio: {{points}}
-    </span>
+    </span>&nbsp;&nbsp;&nbsp;
+    <span style="color:
+            {% if errors > 1 %} lightgreen;"
+            {% elseif errors == 1 %} #FAD813;"
+            {% else %} #f00;"
+            {% endif %}>Vite: {{errors}}
   </div>
   <div class="col-xs-6 buttonContainer">
     <form name="game" method="post" action=""/>
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[0].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
+      <input type="hidden" name="errors" value="{{errors}}" />
       <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[0].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
     <form name="game" method="post" action=""/>
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[1].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
+      <input type="hidden" name="errors" value="{{errors}}" />
       <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[1].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
     </div>
@@ -37,14 +44,30 @@
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[2].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
+      <input type="hidden" name="errors" value="{{errors}}" />
       <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[2].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
     <form name="game" method="post" action=""/>
       <input type="hidden" name="answer" value="{{country.name}}" />
       <input type="hidden" name="guess" value="{{flags[3].name}}" />
       <input type="hidden" name="points" value="{{points}}" />
+      <input type="hidden" name="errors" value="{{errors}}" />
       <input type="image" class="smallFlags" src="{{asset('img/flags/'~flags[3].flagsrc~'.png')}}" alt="???" title="???" />
     </form>
+  </div>
+</div>
+{% endblock %}
+{% block endGameLayer %}
+<div id="endGameLayer" style="{{display}}">
+  <div class="modale">
+        <h4>GAME OVER<br />Hai totalizzato {{points}} punti!</h4>
+        <form action="/records/set/{{setScelto}}" method="post" >
+        <input type="text" name="playerName" placeholder="Inserisci nome" class="player" required />
+        <input type="hidden" name="mode" value="ntf" />
+        <input type="hidden" name="points" value="{{points}}" />
+        <input type="hidden" name="errors" value="{{errors}}" />
+        <input type="submit" class="choices" value="FATTO" />
+        </form>
   </div>
 </div>
 {% endblock %}
@@ -62,6 +85,7 @@
         <input type="text" name="playerName" placeholder="Inserisci nome" class="player" required />
         <input type="hidden" name="mode" value="ntf" />
         <input type="hidden" name="points" value="{{points}}" />
+        <input type="hidden" name="errors" value="{{errors}}" />
         <input type="submit" class="choices" value="SI" />
         </form>
         <input type="submit" class="choices modalClose" value="NO" />

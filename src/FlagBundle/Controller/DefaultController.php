@@ -48,6 +48,7 @@ class DefaultController extends Controller
         $visibility='block';
         //prendo ciò che mi serve dal form
         $player=$request->get('playerName');
+        if($player=='' || $player==null) $player= 'anonimo';
         $points=$request->get('points')*1;
         $mode=$request->get('mode');
 

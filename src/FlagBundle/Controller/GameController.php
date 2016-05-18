@@ -41,14 +41,23 @@ class GameController extends Controller
       $rispostaCorretta=$request->get('answer');
       $rispostaUtente=$request->get('guess');
       $punti=$request->get('points')*1;
+      $errors=$request->get('errors')*1;
       $rispostaUtente === $rispostaCorretta ? $punti++ : $punti--;
-    } else $punti=0;
+      if ($rispostaUtente !== $rispostaCorretta) $errors--;
+      $display= $errors<0 ? 'display:block;' : 'display:none;';
+    } else {
+        $punti=0;
+        $errors=3;
+        $display="display:none;";
+    }
 
     return $this->render ('FlagBundle:Game:nametoflag.html.twig', [
         'flags'=>$sorteggiate,
         'country'=>$flag,
         'points'=>$punti,
-        'setScelto'=>$selectedSet
+        'errors'=>$errors,
+        'setScelto'=>$selectedSet,
+        'display'=>$display
     ]);
   }
 
@@ -84,15 +93,24 @@ class GameController extends Controller
         $rispostaCorretta=$request->get('answer');
         $rispostaUtente=$request->get('guess');
         $punti=$request->get('points')*1;
+        $errors=$request->get('errors')*1;
         $rispostaUtente === $rispostaCorretta ? $punti++ : $punti--;
-      } else $punti=0;
+        if ($rispostaUtente !== $rispostaCorretta) $errors--;
+        $display= $errors<0 ? 'display:block;' : 'display:none;';
+      } else {
+          $punti=0;
+          $errors=3;
+          $display="display:none;";
+      }
 
 
       return $this->render ('FlagBundle:Game:flagtoname.html.twig', [
           'countries'=>$sorteggiate,
           'flag'=>$flag,
           'points'=>$punti,
-          'setScelto'=>$selectedSet
+          'setScelto'=>$selectedSet,
+          'errors'=>$errors,
+          'display'=>$display
       ]);
     }
 }
