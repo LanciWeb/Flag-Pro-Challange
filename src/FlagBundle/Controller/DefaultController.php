@@ -48,7 +48,7 @@ class DefaultController extends Controller
         $visibility='block';
         //prendo ciò che mi serve dal form
         $player=$request->get('playerName');
-        $points=$request->get('points');
+        $points=$request->get('points')*1;
         $mode=$request->get('mode');
 
 
@@ -57,8 +57,14 @@ class DefaultController extends Controller
           //controllo se ci sono almeno 10 partite
             if (count($record_ftn)>=10)// se ci sono già 10 giocatori in lista devo controllare che il punteggio rientri nella top 10
             {
-              $decimoPosto=$em->getRepository('FlagBundle:Record')->FindLastFtNPosition($set);
-              $top10= $points>$decimoPosto ?  true : false;
+              $puntiDecimo=$em->getRepository('FlagBundle:Record')->FindLastFtNPosition($set);
+              if($points>=$puntiDecimo[1]){
+                  $decimo=$em->getRepository('FlagBundle:Record')->findTenthFtNPosition($set, $puntiDecimo[1]);
+                  $em->remove($decimo);
+                  $em->flush();
+                  $top10=true;
+              }
+
             }
             else $top10=true; // se non ci sono ancora 10 giocatori si entra di diritto in top 10
             if($top10===true){ // se entrato in top 10 registro
@@ -79,12 +85,18 @@ class DefaultController extends Controller
           //controllo se ci sono almeno 10 partite
             if (count($record_ntf)>=10)// se ci sono già 10 giocatori in lista devo controllare che il punteggio rientri nella top 10
             {
-              $decimoPosto=$em->getRepository('FlagBundle:Record')->FindLastNtFPosition($set);
-              $top10= $points>$decimoPosto ?  true : false;
+              $puntiDecimo=$em->getRepository('FlagBundle:Record')->FindLastNtFPosition($set);
+              if($points>=$puntiDecimo[1]){
+                  $decimo=$em->getRepository('FlagBundle:Record')->findTenthNtFPosition($set, $puntiDecimo[1]);
+                  $em->remove($decimo);
+                  $em->flush();
+                  $top10=true;
+              }
             }
             else $top10=true; // se non ci sono ancora 10 giocatori si entra di diritto in top 10
             if($top10===true){ // se entrato in top 10 registro
-              $punteggio=new Record(); //inserieco il nuovo record
+              //inserisco il nuovo record
+              $punteggio=new Record();
               $punteggio->setName($player);
               $punteggio->setPoints($points);
               $punteggio->setMode($mode);

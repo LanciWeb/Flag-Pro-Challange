@@ -27,9 +27,18 @@ public function FindLastFtNPosition($set){
 }
 
 public function FindLastNtFPosition($set){
-  return $this->getEntityManager()->createQuery("SELECT MIN(r.points) FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ntf'")
+  return $this->getEntityManager()->createQuery("SELECT MIN(r. points) FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ntf'")
   ->setMaxResults(1)->getOneOrNullResult();
 }
 
+public function findTenthFtNPosition($set, $puntiDecimo){
+  return $this->getEntityManager()->createQuery("SELECT r FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ftn' AND r.points='$puntiDecimo'")
+  ->setMaxResults(1)->getOneOrNullResult();
+}
+
+public function findTenthNtFPosition($set, $puntiDecimo){
+  return $this->getEntityManager()->createQuery("SELECT r FROM FlagBundle:Record r WHERE r.flagset='$set' AND r.mode='ntf' AND r.points='$puntiDecimo'")
+  ->setMaxResults(1)->getOneOrNullResult();
+}
 
 }
